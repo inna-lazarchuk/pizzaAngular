@@ -1,0 +1,26 @@
+<section class="order" id="order" #orderElement>
+  <div class="container">
+    <div class="order-text">
+      <div class="order-text-title double-title">
+        <a routerLink="/order" [queryParams]="{product: formValues.productTitle + '1'}">Хватит думать!</a> Доставим заказ за 30 минут!</div>
+      <div class="order-text-message">Мы гарантированно доставим вашу пиццу за 30 минут с момента оформления
+        заказа.
+        Если мы опоздаем даже на 1 минуту - вы получаете весь заказ бесплатно и ваучер на скидку на следующий
+        заказ.
+        Мы гордимся нашим сервисом и сделаем всё, чтобы наш клиент был доволен и не остался голодный!
+      </div>
+    </div>
+    <div class="order-form">
+      <input type="text" placeholder="Пицца" class="order-input" coolInput id="product-input"
+             [coolInputDefaultBgColor]="'gray'"
+             [coolInputFocusBgColor]="'red'"
+             [(ngModel)]="formValues.productTitle">
+      <input type="text" placeholder="Адрес доставки" class="order-input" id="address-input" [(ngModel)]="formValues.address">
+      <input type="text" placeholder="Телефон" class="order-input" id="phone-input" [(ngModel)]="formValues.phone">
+      <button class="btn" (click)="createOrder()">Оформить заказ</button>
+    </div>
+    <div class="order-image">
+      <img src="assets/images/pizzzzza.png" alt="Кусочек пиццы" class="wow animate__backInRight">
+    </div>
+  </div>
+</section>
